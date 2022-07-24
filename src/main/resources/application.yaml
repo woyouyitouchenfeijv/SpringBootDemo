@@ -3,75 +3,9 @@ server:
   port: 8076
   servlet:
   context-path: /
-
+#--------------------------------------------------------------------------------------------------#
 spring:
   application:
     #consul里的名字，也可以在bootstarp.yml里配置
     name: ceshi
-app:
-  sso:
-    # 是否开启单点
-    open: true
-    name: 子应用
-    #子应用编码，
-    code: 1001
-    #对接方式：http或memcached
-    protocol: http
-    #单点地址
-    server: http://10.15.0.189:8082/ssoserver/
-    #子应用回跳地址
-    toUrl: http://10.15.0.189:8089
-    #退出地址
-    quitUrl: http://10.15.0.189:8089/quit
-    #前后端分离
-    projectType: 1
-slwmem:
-  memorycache:
-    sso:
-      # 是否开启
-      openFlag: true
-      # 缓存类型 修改cacheHandler路径切换缓存类型，MemcachedHandler为memcached，RedisClusterHandler为集群模式，RedisHandler为单机模式
-      cacheHandler: com.css.slw.cache.config.handlers.MemcachedHandler
-      # 为区分系统，key标识前缀
-      prefix: Global_Sso_Memcache
-      # 服务器地址
-      servers: 10.3.58.15:11216
-      # 集群密码
-      redisPassword: 123456
-      # 最大连接数
-      maxConn: 5000
-      # 最小连接数
-      minConn: 50
-      # 初始连接数
-      initConn: 10
-      # 监控线程轮询间隔
-      maintSleep: 3000
-      # 读取超时
-      readTimeout: 2000
-      # 建立连接超时,0则无超时
-      connectionTimeout: 0
-      # 空闲时长，释放连接
-      idleTimeout: 36000000
-    redisMain:
-      # 是否开启
-      openFlag: true
-      # 缓存类型 RedisHandler, RedisClusterHandler
-      cacheHandler: com.css.slw.cache.config.handlers.RedisHandler
-      # 为区分系统，key标识前缀
-      prefix: Global_redisMain_Memcache
-      # 服务器地址
-      servers: 10.10.150.46:6379
-      # 最大连接数
-      maxConn: 5000
-      # 最小连接数
-      minConn: 50
-      # 初始连接数
-      initConn: 10
-      # 监控线程轮询间隔
-      maintSleep: 3000
-      # 读取超时
-      readTimeout: 2000
-      # 建立连接超时,0则无超时
-      connectionTimeout: 0
-      # 空闲时长，释放连接
-      idleTimeout: 36000000
+#--------------------------------------------------------------------------------------------------#
