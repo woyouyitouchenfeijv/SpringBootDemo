@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    consul:
+      host: 192.168.205.26
+      port: 8500
+      discovery:
+        config:
+          enable: true
+          profileSeparator: /
+          format: yaml
+        heartbeat:
+          enabled: true
+          ttl-value: 5
+          ttl-unit: s
+        prefer-ip-address: true
+        ip-address: 192.168.206.125
